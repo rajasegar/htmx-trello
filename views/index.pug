@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    title Trello in htmx
+    link(href="/styles.css", rel="stylesheet")
+  body
+    .App
+      .Header htmx Trello Clone
+      .Board
+        each list in lists
+          .List(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='false')
+            .List-Title #{list.name}
+            .Lists-Cards
+              each card in list.cards
+                .Card(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='false') #{card.label}
+              include _toggle-add-card
+
+        .Add-List
+          .Add-List-Button
+            ion-icon.hydrated(name='add' role='img' aria-label='add')
+            |  Add a list
+
+  script(src="https://unpkg.com/htmx.org@1.3.1")

@@ -1,0 +1,256 @@
+.App {
+    background: #4bbf6b;
+    height: 100vh
+}
+
+.Header {
+    background: rgba(0,0,0,.15);
+    color: #fff;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200
+}
+
+.Board {
+    height: 92%;
+    display: -webkit-flex;
+    display: flex;
+    overflow-x: auto
+}
+
+.Add-List {
+    width: 272px;
+    margin: 10px;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0
+}
+
+.Add-List-Button {
+    background-color: rgba(0,0,0,.12);
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    min-height: 32px;
+    padding: 5px 8px;
+    transition: background-color 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content
+}
+
+.Add-List-Button:hover {
+    background-color: rgba(0,0,0,.24)
+}
+
+.Add-List-Button ion-icon {
+    margin-right: 1px
+}
+
+.List {
+    background: #dfe3e6;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    width: 272px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 10px 0 10px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.12)
+}
+
+.List-Title {
+    cursor: pointer;
+    padding: 10px;
+    overflow-wrap: break-word
+}
+
+.Toggle-Add-Card {
+    cursor: pointer;
+    padding: 10px;
+    color: #6b808c;
+    border-radius: 0 0 10px 10px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.Toggle-Add-Card:hover {
+    background-color: rgba(9,45,66,.13);
+    color: #17394d;
+    text-decoration: underline
+}
+
+.Toggle-Add-Card ion-icon {
+    margin-right: 2px
+}
+
+.Card {
+    position: relative;
+    cursor: pointer;
+    background: #fff;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.12);
+    box-shadow: 0 1px 0 rgba(9,45,66,.25);
+    font-size: 15px;
+    overflow-wrap: break-word;
+    min-height: 18px
+}
+
+.Card:hover {
+    background: #f5f6f7
+}
+
+.Card-Icons {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end
+}
+
+.Card-Icon,.Card-Icons {
+    display: -webkit-flex;
+    display: flex
+}
+
+.Card-Icon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 1px;
+    color: rgba(0,0,0,.5);
+    background: #f5f6f7;
+    opacity: .9
+}
+
+.Card-Icon:hover {
+    opacity: 1;
+    background: #dcdcdc
+}
+
+.Edit-Card .Card {
+    min-height: 50px;
+    padding-left: 8px;
+    padding-right: 15px
+}
+
+.Edit-Card .Card:hover {
+    background: #fff
+}
+
+.Edit-Card-Textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 15px
+}
+
+.Edit-Buttons {
+    display: -webkit-flex;
+    display: flex
+}
+
+.Edit-Button {
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 #3f6f21;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 5px 10px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    outline: none
+}
+
+.Edit-Button:hover {
+    opacity: .7
+}
+
+.Edit-Button-Cancel {
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 20px;
+    opacity: .5;
+    outline: none
+}
+
+.Edit-Button-Cancel:hover {
+    opacity: 1
+}
+
+.List-Title-Edit {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.List-Title-Edit ion-icon {
+    cursor: pointer;
+    padding: 2px;
+    margin: 1px 3px;
+    font-size: 23px;
+    border-radius: 5px;
+    color: rgba(0,0,0,.5)
+}
+
+.List-Title-Edit ion-icon:hover {
+    background: #d3d3d3
+}
+
+.List-Title-Textarea {
+    margin: 6px 0 5px 6px;
+    border-radius: 3px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 15px;
+    padding: 5px
+}
+
+.List-Title-Textarea:focus {
+    box-shadow: inset 0 0 0 2px #0079bf
+}
+
+.Add-List-Editor {
+    background: #dfe3e6;
+    border-radius: 5px;
+    padding: 2px
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+code {
+    font-family: source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace
+}
+

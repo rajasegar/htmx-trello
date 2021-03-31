@@ -1,0 +1,8 @@
+#edit-card.Edit-Card
+  .Card
+    textarea.Edit-Card-Textarea(placeholder='Enter the text for this card...' style='height: 34px;')
+  .Edit-Buttons
+    .Edit-Button(tabindex='0' style='background-color: rgb(90, 172, 68);') Add card
+    .Edit-Button-Cancel(tabindex='0', hx-get="/cards/cancel", hx-target='#edit-card')
+      ion-icon.hydrated(name='close' role='img' aria-label='close')
+

@@ -1,3 +1,4 @@
-.Toggle-Add-Card(hx-get="/cards/add")
-  ion-icon.hydrated(name='add' role='img' aria-label='add')
-  |  Add a card
+include _mixins
+.Toggle-Add-Card(hx-get="/cards/add/" + list.id, hx-swap="outerHTML")
+  +icon-plus()
+  span(style="margin-left: 1em;")  Add a card

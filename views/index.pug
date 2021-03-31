@@ -6,7 +6,7 @@ html(lang="en")
   body
     .App
       .Header htmx Trello Clone
-      .Board
+      #board.Board
         each list in lists
           .List(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='false')
             .List-Title #{list.name}
@@ -16,7 +16,7 @@ html(lang="en")
               include _toggle-add-card
 
         .Add-List
-          .Add-List-Button
+          .Add-List-Button(hx-get="/lists/add", hx-swap="outerHTML")
             ion-icon.hydrated(name='add' role='img' aria-label='add')
             |  Add a list
 

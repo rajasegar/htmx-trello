@@ -1,0 +1,10 @@
+include _mixins
+#add-list.Add-List-Editor
+  form(hx-post="/lists", hx-target="#board", hx-swap="beforeend")
+    .List-Title-Edit
+      textarea.List-Title-Textarea(name="name", placeholder='Enter list title...' style='width: 245px; height: 17px;')
+    .Edit-Buttons
+      button.Edit-Button(type="submit", tabindex='0' style='background-color: rgb(90, 172, 68);') Add list
+      .Edit-Button-Cancel(tabindex='0')
+        +icon-close()
+

@@ -2,7 +2,7 @@ include _mixins
 #edit-card.Edit-Card
   form(hx-post="/cards", hx-target="#edit-card", hx-swap="outerHTML")
     .Card
-      textarea.Edit-Card-Textarea(name="label", placeholder='Enter the text for this card...' style='height: 34px;')
+      textarea.Edit-Card-Textarea(name="label", placeholder='Enter the text for this card...' style='height: 34px;', maxlength="300")
       input(type="hidden", name="listId", value=id)
     .Edit-Buttons
       button.Edit-Button(type="submit", tabindex='0' style='background-color: rgb(90, 172, 68);') Add card

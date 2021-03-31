@@ -58,8 +58,8 @@ app.post('/lists', (req,res) => {
     cards: []
   };
   lists.push(newList);
-  const template = pug.compileFile('views/_list.pug');
-  const markup = template({ list: newList } );
+  const template = pug.compileFile('views/_board.pug');
+  const markup = template({ lists } );
   res.send(markup);
 
 });

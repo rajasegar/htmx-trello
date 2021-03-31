@@ -94,7 +94,7 @@
 
 .Card {
     position: relative;
-    cursor: pointer;
+    cursor: grab;
     background: #fff;
     margin: 5px;
     padding: 10px;

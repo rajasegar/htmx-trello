@@ -1,0 +1,12 @@
+each list in lists
+  .List(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='true')
+    .List-Title #{list.name}
+    .Lists-Cards
+      each card in list.cards
+        .Card(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='true') #{card.label}
+      include _toggle-add-card
+
+.Add-List
+  .Add-List-Button(hx-get="/lists/add", hx-swap="outerHTML")
+    ion-icon.hydrated(name='add' role='img' aria-label='add')
+    |  Add a list

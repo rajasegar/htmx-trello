@@ -1,4 +1,5 @@
 include _mixins
+#edit-card(hx-swap-oob="true")
 .Card(
   id='card-' + card.id
   tabindex='0' 
@@ -10,3 +11,5 @@ include _mixins
     button.Card-Icon(type="button", hx-get="/cards/edit/" + list.id + "/" + card.id, hx-target="#card-" + card.id, hx-swap="outerHTML")
       +icon-edit()
   | #{card.label}
+include _toggle-add-card
+

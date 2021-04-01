@@ -1,6 +1,7 @@
 const express = require('express');
 const pug = require('pug');
 const bodyParser = require('body-parser');
+const { v1 } = require('uuid');
 
 const lists = require('./data/lists');
 
@@ -24,6 +25,27 @@ app.get('/cards/add/:id', (req, res) => {
   res.send(markup);
 });
 
+app.get('/cards/edit/:list_id/:id', (req, res) => {
+  debugger;
+  const { list_id, id } = req.params;
+  const list = lists.find(l => l.id == list_id);
+  const card = list.cards.find(c => c.id == id);
+  const template = pug.compileFile('views/_edit-card.pug');
+  const markup = template({ id, list, card });
+  res.send(markup);
+});
+
+app.put('/cards/:list_id/:id', (req, res) => {
+  const { label } = req.body;
+  const { list_id, id } = req.params;
+  const list = lists.find(l => l.id == list_id);
+  const card = list.cards.find(c => c.id == id);
+  card.label = label;
+  const template = pug.compileFile('views/_card.pug');
+  const markup = template({ card, list } );
+  res.send(markup);
+});
+
 app.get('/cards/cancel/:id', (req, res) => {
   const { id } = req.params;
   const list = lists.find(l => l.id == id);
@@ -37,9 +59,11 @@ app.post('/cards', (req,res) => {
   const { label, listId } = req.body;
   const list = lists.find(l => l.id == listId);
   const card = {
-    label
+    label,
+    id: v1(),
+    list: listId
   };
-  const template = pug.compileFile('views/_card.pug');
+  const template = pug.compileFile('views/_new-card.pug');
   const markup = template({ card, list } );
   res.send(markup);
 });

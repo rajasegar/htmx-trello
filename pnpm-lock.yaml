@@ -2,6 +2,7 @@ dependencies:
   body-parser: 1.19.0
   express: 4.17.1
   pug: 3.0.2
+  uuid: 8.3.2
 devDependencies:
   nodemon: 2.0.7
 lockfileVersion: 5.2
@@ -1438,6 +1439,11 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+  /uuid/8.3.2:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
   /vary/1.1.2:
     dev: false
     engines:
@@ -1493,3 +1499,4 @@ specifiers:
   express: ^4.17.1
   nodemon: ^2.0.7
   pug: ^3.0.2
+  uuid: ^8.3.2

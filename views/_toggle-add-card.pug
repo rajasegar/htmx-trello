@@ -1,4 +1,4 @@
 include _mixins
-.Toggle-Add-Card(hx-get="/cards/add/" + list.id, hx-swap="outerHTML")
+#add-card.Toggle-Add-Card(hx-get="/cards/add/" + list.id, hx-swap="outerHTML")
   +icon-plus()
-  span(style="margin-left: 1em;")  Add a card
+  span  Add another card

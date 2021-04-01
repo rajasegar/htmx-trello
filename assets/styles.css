@@ -1,5 +1,5 @@
 .App {
-    background: #4bbf6b;
+    background: #3465a4;
     height: 100vh
 }
 
@@ -29,7 +29,7 @@
 
 .Add-List-Button {
     background-color: rgba(0,0,0,.12);
-    border-radius: 10px;
+    border-radius: 4px;
     cursor: pointer;
     color: #fff;
     display: -webkit-flex;
@@ -61,7 +61,7 @@
     height: -moz-fit-content;
     height: fit-content;
     margin: 10px 0 10px 10px;
-    border-radius: 10px;
+    border-radius: 4px;
     border: 1px solid rgba(0,0,0,.12)
 }
 
@@ -137,7 +137,8 @@
     margin: 1px;
     color: rgba(0,0,0,.5);
     background: #f5f6f7;
-    opacity: .9
+    opacity: .9;
+    border: none;
 }
 
 .Card-Icon:hover {
@@ -177,6 +178,7 @@
     margin: 0 5px 10px;
     padding: 6px 12px;
     border-radius: 5px;
+    border: none;
     color: #fff;
     font-weight: 700;
     outline: none
@@ -254,3 +256,6 @@ code {
     font-family: source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace
 }
 
+.hidden {
+  display: none;
+}

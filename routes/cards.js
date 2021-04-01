@@ -81,4 +81,9 @@ cardsRouter.delete('/:list_id/:id', (req,res) => {
   res.send('');
 });
 
+cardsRouter.post('/move', (req, res) => {
+  console.log(req.body);
+  res.send('success');
+});
+
 module.exports = cardsRouter;

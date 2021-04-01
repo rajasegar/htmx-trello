@@ -25,7 +25,6 @@ listsRouter.post('/', (req,res) => {
 });
 
 listsRouter.get('/cancel', (req,res) => {
-
   const template = pug.compileFile('views/_new-list.pug');
   const markup = template({  } );
   res.send(markup);

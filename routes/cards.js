@@ -83,7 +83,22 @@ cardsRouter.delete('/:list_id/:id', (req,res) => {
 
 cardsRouter.post('/move', (req, res) => {
   console.log(req.body);
-  res.send('success');
+  const { from , to , movedCard } = req.body;
+  const [,fromId] = from.split('-');
+  const [,toId] = to.split('-');
+  const cardId = movedCard.replace('card-','');
+
+
+  const fromList = lists.find(l => l.id == fromId);
+  const card = fromList.cards.find(c => c.id == cardId);
+  fromList.cards = fromList.cards.filter(c => c.id != cardId);
+
+  const toList = lists.find(l => l.id == toId);
+  toList.cards.push(card);
+
+  const template = pug.compileFile('views/_board.pug');
+  const markup = template({ lists } );
+  res.send(markup);
 });
 
 module.exports = cardsRouter;

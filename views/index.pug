@@ -7,8 +7,11 @@ html(lang="en")
   body
     .App
       .Header htmx Trello Clone
-      form(hx-post="/cards/move", hx-trigger="end", hx-swap="none")
-        #board.Board(_="on end log event")
+      form(hx-post="/cards/move", hx-trigger="cardmoved", hx-target="#board")
+        input#fromList(type="hidden", name="from")
+        input#toList(type="hidden", name="to")
+        input#movedCard(type="hidden", name="movedCard")
+        #board.Board(_="on end put event.from.id into #fromList.value put event.to.id into #toList.value put event.item.id into #movedCard.value then send cardmoved")
           each list in lists
             .List(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='true')
               .List-Title #{list.name}
@@ -23,7 +26,6 @@ html(lang="en")
                     draggable='true'
                     _="on mouseenter toggle .hidden on #card-edit-" + card.id + " until mouseleave"
                     ) 
-                    input(type="hidden", name='cards', value=list.id + '_' + card.id)
                     .Card-Icons.hidden(id='card-edit-' + card.id)
                       button.Card-Icon(type="button", hx-get="/cards/edit/" + list.id + "/" + card.id, hx-target="#card-" + card.id, hx-swap="outerHTML")
                         +icon-edit()

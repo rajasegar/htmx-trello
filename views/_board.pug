@@ -3,7 +3,7 @@ each list in lists
     .List-Title #{list.name}
     .Lists-Cards
       each card in list.cards
-        .Card(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='true') #{card.label}
+        include _card
       include _toggle-add-card
 
 .Add-List

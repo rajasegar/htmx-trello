@@ -197,7 +197,9 @@
     align-items: center;
     font-size: 20px;
     opacity: .5;
-    outline: none
+    outline: none;
+    padding:0;
+    border: none;
 }
 
 .Edit-Button-Cancel:hover {

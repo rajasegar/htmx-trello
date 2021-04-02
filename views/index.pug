@@ -5,35 +5,14 @@ html(lang="en")
     title Trello in htmx
     link(href="/styles.css", rel="stylesheet")
   body
-    .App
-      .Header htmx Trello Clone
+    .app
+      .header htmx Trello Clone
       form(hx-post="/cards/move", hx-trigger="cardmoved", hx-target="#board")
         input#fromList(type="hidden", name="from")
         input#toList(type="hidden", name="to")
         input#movedCard(type="hidden", name="movedCard")
-        #board.Board(_="on end put event.from.id into #fromList.value put event.to.id into #toList.value put event.item.id into #movedCard.value then send cardmoved")
-          each list in lists
-            .List(tabindex='0' aria-roledescription='Draggable item. Press space bar to lift' draggable='true')
-              .List-Title #{list.name}
-              .Lists-Cards.sortable(
-                id='list-' + list.id
-                )
-                each card in list.cards
-                  .Card(
-                    id='card-' + card.id
-                    tabindex='0' 
-                    aria-roledescription='Draggable item. Press space bar to lift' 
-                    draggable='true'
-                    _="on mouseenter toggle .hidden on #card-edit-" + card.id + " until mouseleave"
-                    ) 
-                    .Card-Icons.hidden(id='card-edit-' + card.id)
-                      button.Card-Icon(type="button", hx-get="/cards/edit/" + list.id + "/" + card.id, hx-target="#card-" + card.id, hx-swap="outerHTML")
-                        +icon-edit()
-                    | #{card.label}
-              include _toggle-add-card
-
-          .Add-List
-            include _new-list
+        #board.board(_="on end put event.from.id into #fromList.value put event.to.id into #toList.value put event.item.id into #movedCard.value then send cardmoved")
+          include _board
 
   script(src="https://unpkg.com/htmx.org@1.3.1")
   script(src="https://unpkg.com/hyperscript.org@0.0.8")

@@ -1,11 +1,11 @@
 include _mixins
-#add-list.Add-List-Editor
+#add-list.add-list-editor
   form(hx-post="/lists", hx-target="#board")
-    .List-Title-Edit
-      input.List-Title-Textarea(type="text", maxlength="30", name="name", placeholder='Enter list title...' style='width: 245px; height: 17px;', autofocus="true")
-    .Edit-Buttons
-      button.Edit-Button(type="submit", tabindex='0' style='background-color: rgb(90, 172, 68);') Add list
-      button.Edit-Button-Cancel(
+    .list-title-edit
+      input.list-title-textarea(type="text", maxlength="30", name="name", placeholder='Enter list title...' style='width: 245px; height: 17px;', autofocus="true")
+    .edit-buttons
+      button.edit-button(type="submit", tabindex='0' style='background-color: rgb(90, 172, 68);') Add list
+      button.edit-button-cancel(
         type="button",
         tabindex='0'
         hx-get="/lists/cancel"

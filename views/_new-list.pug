@@ -1,4 +1,4 @@
 include _mixins
-.Add-List-Button(hx-get="/lists/add", hx-swap="outerHTML")
+#add-list.add-list-button(hx-get="/lists/add", hx-swap="outerHTML", hx-target="#add-list")
   +icon-plus()
   |  Add another list

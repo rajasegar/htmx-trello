@@ -91,6 +91,7 @@ cardsRouter.post('/move', (req, res) => {
 
   const fromList = lists.find(l => l.id == fromId);
   const card = fromList.cards.find(c => c.id == cardId);
+  card.list = toId;
   fromList.cards = fromList.cards.filter(c => c.id != cardId);
 
   const toList = lists.find(l => l.id == toId);

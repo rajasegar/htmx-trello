@@ -1,9 +1,21 @@
-.App {
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+code {
+    font-family: source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace
+}
+
+.app {
     background: #3465a4;
     height: 100vh
 }
 
-.Header {
+.header {
     background: rgba(0,0,0,.15);
     color: #fff;
     padding: 5px 0;
@@ -13,21 +25,21 @@
     font-weight: 200
 }
 
-.Board {
+.board {
     height: 92%;
     display: -webkit-flex;
     display: flex;
     overflow-x: auto
 }
 
-.Add-List {
+.add-list {
     width: 272px;
     margin: 10px;
     -webkit-flex-shrink: 0;
     flex-shrink: 0
 }
 
-.Add-List-Button {
+.add-list-button {
     background-color: rgba(0,0,0,.12);
     border-radius: 4px;
     cursor: pointer;
@@ -44,15 +56,12 @@
     height: fit-content
 }
 
-.Add-List-Button:hover {
+.add-list-button:hover {
     background-color: rgba(0,0,0,.24)
 }
 
-.Add-List-Button ion-icon {
-    margin-right: 1px
-}
 
-.List {
+.list {
     background: #dfe3e6;
     -webkit-flex-shrink: 0;
     flex-shrink: 0;
@@ -65,34 +74,33 @@
     border: 1px solid rgba(0,0,0,.12)
 }
 
-.List-Title {
+.list-title {
     cursor: pointer;
     padding: 10px;
     overflow-wrap: break-word
 }
 
-.Toggle-Add-Card {
+.toggle-add-card {
     cursor: pointer;
     padding: 10px;
-    color: #6b808c;
-    border-radius: 0 0 10px 10px;
+    color: #333;
+    border-radius: 0 0 4px 4px;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
-    align-items: center
+    align-items: center;
+    border: none;
+    width: 100%;
 }
 
-.Toggle-Add-Card:hover {
+.toggle-add-card:hover {
     background-color: rgba(9,45,66,.13);
     color: #17394d;
     text-decoration: underline
 }
 
-.Toggle-Add-Card ion-icon {
-    margin-right: 2px
-}
 
-.Card {
+.card {
     position: relative;
     cursor: grab;
     background: #fff;
@@ -106,11 +114,11 @@
     min-height: 18px
 }
 
-.Card:hover {
+.card:hover {
     background: #f5f6f7
 }
 
-.Card-Icons {
+.card-icons {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -120,12 +128,12 @@
     justify-content: flex-end
 }
 
-.Card-Icon,.Card-Icons {
+.card-icon,.card-icons {
     display: -webkit-flex;
     display: flex
 }
 
-.Card-Icon {
+.card-icon {
     cursor: pointer;
     width: 24px;
     height: 24px;
@@ -141,22 +149,22 @@
     border: none;
 }
 
-.Card-Icon:hover {
+.card-icon:hover {
     opacity: 1;
     background: #dcdcdc
 }
 
-.Edit-Card .Card {
+.edit-card .card {
     min-height: 50px;
     padding-left: 8px;
     padding-right: 15px
 }
 
-.Edit-Card .Card:hover {
+.edit-card .card:hover {
     background: #fff
 }
 
-.Edit-Card-Textarea {
+.edit-card-textarea {
     width: 100%;
     border: none;
     resize: none;
@@ -164,12 +172,12 @@
     font-size: 15px
 }
 
-.Edit-Buttons {
+.edit-buttons {
     display: -webkit-flex;
     display: flex
 }
 
-.Edit-Button {
+.edit-button {
     cursor: pointer;
     box-shadow: 0 1px 0 0 #3f6f21;
     width: -webkit-fit-content;
@@ -180,15 +188,14 @@
     border-radius: 5px;
     border: none;
     color: #fff;
-    font-weight: 700;
     outline: none
 }
 
-.Edit-Button:hover {
+.edit-button:hover {
     opacity: .7
 }
 
-.Edit-Button-Cancel {
+.edit-button-cancel {
     cursor: pointer;
     margin-bottom: 10px;
     display: -webkit-flex;
@@ -202,31 +209,19 @@
     border: none;
 }
 
-.Edit-Button-Cancel:hover {
+.edit-button-cancel:hover {
     opacity: 1
 }
 
-.List-Title-Edit {
+.list-title-edit {
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center
 }
 
-.List-Title-Edit ion-icon {
-    cursor: pointer;
-    padding: 2px;
-    margin: 1px 3px;
-    font-size: 23px;
-    border-radius: 5px;
-    color: rgba(0,0,0,.5)
-}
 
-.List-Title-Edit ion-icon:hover {
-    background: #d3d3d3
-}
-
-.List-Title-Textarea {
+.list-title-textarea {
     margin: 6px 0 5px 6px;
     border-radius: 3px;
     border: none;
@@ -236,27 +231,17 @@
     padding: 5px
 }
 
-.List-Title-Textarea:focus {
+.list-title-textarea:focus {
     box-shadow: inset 0 0 0 2px #0079bf
 }
 
-.Add-List-Editor {
+.add-list-editor {
     background: #dfe3e6;
     border-radius: 5px;
     padding: 2px
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
 
-code {
-    font-family: source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace
-}
 
 .hidden {
   display: none;

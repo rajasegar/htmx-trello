@@ -1,4 +1,9 @@
 include _mixins
-#add-card.Toggle-Add-Card(hx-get="/cards/add/" + list.id, hx-swap="outerHTML")
+button.toggle-add-card(
+  id='add-card-' + list.id,
+  type="button", 
+  hx-get="/cards/add/" + list.id, 
+  hx-swap="outerHTML", 
+  hx-target="#add-card-" + list.id)
   +icon-plus()
   span  Add another card

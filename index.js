@@ -2,6 +2,7 @@ const express = require('express');
 const pug = require('pug');
 const bodyParser = require('body-parser');
 const { v1 } = require('uuid');
+const compression = require('compression');
 
 const lists = require('./data/lists');
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('assets'));
+app.use(compression());
 
 app.get('/', (req, res) => {
   res.render('index', { lists });

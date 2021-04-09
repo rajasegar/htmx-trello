@@ -1,9 +1,8 @@
 include _mixins
 button.toggle-add-card(
-  id='add-card-' + list.id,
+  id="btn-add-card-" + list.id
   type="button", 
-  hx-get="/cards/add/" + list.id, 
-  hx-swap="outerHTML", 
-  hx-target="#add-card-" + list.id)
+  _="on click toggle .hidden on me toggle .hidden on #add-card-" + list.id
+  )
   +icon-plus()
   span  Add another card

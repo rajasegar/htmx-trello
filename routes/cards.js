@@ -55,20 +55,6 @@ cardsRouter.get('/cancel-edit/:list_id/:id', (req,res) => {
   res.send(markup);
 });
 
-cardsRouter.post('/', (req,res) => {
-  console.log(req.body);
-  const { label, listId } = req.body;
-  const list = lists.find(l => l.id == listId);
-  const card = {
-    label,
-    id: v1(),
-    list: listId
-  };
-  list.cards.push(card);
-  const template = pug.compileFile('views/_new-card.pug');
-  const markup = template({ card, list } );
-  res.send(markup);
-});
 
 
 cardsRouter.delete('/:list_id/:id', (req,res) => {
@@ -101,5 +87,22 @@ cardsRouter.post('/move', (req, res) => {
   const markup = template({ lists } );
   res.send(markup);
 });
+
+cardsRouter.post('/new/:listId', (req,res) => {
+  console.log(req.body);
+  const { listId } = req.params;
+  const label = req.body['label-' + listId];
+  const list = lists.find(l => l.id == listId);
+  const card = {
+    label,
+    id: v1(),
+    list: listId
+  };
+  list.cards.push(card);
+  const template = pug.compileFile('views/_new-card.pug');
+  const markup = template({ card, list } );
+  res.send(markup);
+});
+
 
 module.exports = cardsRouter;

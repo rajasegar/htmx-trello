@@ -1,6 +1,6 @@
 include _mixins
 each list in lists
-  .list
+  .list(draggable='true')
     .list-title #{list.name}
     .lists-cards.sortable(
       id='list-' + list.id

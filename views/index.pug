@@ -11,7 +11,7 @@ html(lang="en")
         input#fromList(type="hidden", name="from")
         input#toList(type="hidden", name="to")
         input#movedCard(type="hidden", name="movedCard")
-        #board.board(_="on end put event.from.id into #fromList.value put event.to.id into #toList.value put event.item.id into #movedCard.value then send cardmoved")
+        #board.board.sortable(_="on end put event.from.id into #fromList.value put event.to.id into #toList.value put event.item.id into #movedCard.value then send cardmoved")
           include _board
 
   script(src="https://unpkg.com/htmx.org@1.3.1")
